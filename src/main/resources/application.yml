@@ -1,41 +1,43 @@
 server:
-   port: ${PORT:8080}
+  port: ${PORT:8080}
   # forward-headers-strategy: framework
 
 spring:
-    application:
-        name: ${APPLICATION_NAME:bookstore}
+  application:
+    name: ${APPLICATION_NAME:bookstore}
 
-    datasource:
-        url: jdbc:postgresql://ep-summer-rice-aot33kkd.c-2.ap-southeast-1.aws.neon.tech:5432/neondb?sslmode=require
-        username: neondb_owner
-        password: npg_y7FnzQkq8rAW
-        driver-class-name: org.postgresql.Driver
+  datasource:
+    url: jdbc:postgresql://ep-summer-rice-aot33kkd.c-2.ap-southeast-1.aws.neon.tech:5432/neondb?sslmode=require
+    username: neondb_owner
+    password: npg_y7FnzQkq8rAW
+    driver-class-name: org.postgresql.Driver
 
-   jpa:
-        show-sql: ${JPA_SHOW_SQL:false}
-        properties:
-            hibernate:
-                format_sql: ${HIBERNATE_FORMAT_SQL:false}
-        hibernate:
-            ddl-auto: update
-    servlet:
-        multipart:
-            max-file-size: 500MB
-            max-request-size: 500MB
+  jpa:
+    show-sql: ${JPA_SHOW_SQL:false}
+    properties:
+      hibernate:
+        format_sql: ${HIBERNATE_FORMAT_SQL:false}
+    hibernate:
+      ddl-auto: update
+
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+
 com:
-    learn:
-        cloudinary:
-            name: ${CLOUDINARY_NAME:dluju6pjs}
-            api:
-                key: ${CLOUDINARY_API_KEY:631632154369394}
-                secret: ${CLOUDINARY_API_SECRET:WMYxoGmkQqEr64F4PTxdWXAW-KQ}
-                
-                
+  learn:
+    cloudinary:
+      name: ${CLOUDINARY_NAME:dluju6pjs}
+      api:
+        key: ${CLOUDINARY_API_KEY:631632154369394}
+        secret: ${CLOUDINARY_API_SECRET:WMYxoGmkQqEr64F4PTxdWXAW-KQ}
+
 logging:
-    level:
-        org:
-            springframework:
-                security: ${SPRING_SECURITY_LOG_LEVEL:ERROR}
-    pattern:
-        console: ${LOGPATTERN_CONSOLE:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}
+  level:
+    org:
+      springframework:
+        security: ${SPRING_SECURITY_LOG_LEVEL:ERROR}
+
+  pattern:
+    console: ${LOGPATTERN_CONSOLE:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}
