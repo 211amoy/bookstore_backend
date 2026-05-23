@@ -26,6 +26,14 @@ spring:
         multipart:
             max-file-size: 500MB
             max-request-size: 500MB
+com:
+    learn:
+        cloudinary:
+            name: dluju6pjs
+            api:
+                key: 631632154369394
+                secret: WMYxoGmkQqEr64F4PTxdWXAW-KQ
+
 
 logging:
     level:
