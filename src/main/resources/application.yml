@@ -1,38 +1,37 @@
-
 server:
-    port: ${SERVER_PORT:8080}
+    port: 8080
 
 spring:
     application:
-        name: ${APPLICATION_NAME:bookstore}
+        name: bookstore
+
     datasource:
-        url: jdbc:mysql://${DATABASE_HOST:sql302.infinityfree.com}:${DATABASE_PORT:3306}/${DATABASE_NAME:if0_41993442_bookstore}
-        username: ${DATABASE_USERNAME:if0_41993442}
-        password: ${DATABASE_PASSWORD:u24nzC6NdmTiV0H}
+        url: jdbc:postgresql://ep-summer-rice-aot33kkd.c-2.ap-southeast-1.aws.neon.tech:5432/neondb?sslmode=require
+        username: neondb_owner
+        password: npg_y7FnzQkq8rAW
+        driver-class-name: org.postgresql.Driver
+
     jpa:
-        show-sql: ${JPA_SHOW_SQL:false}
+        show-sql: false
+
         properties:
             hibernate:
-                format_sql: ${HIBERNATE_FORMAT_SQL:false}
+                format_sql: false
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+
         hibernate:
             ddl-auto: update
+
     servlet:
         multipart:
             max-file-size: 500MB
             max-request-size: 500MB
 
-com:
-    learn:
-        cloudinary:
-            name: ${CLOUDINARY_NAME:duhumawiq}
-            api:
-                key: ${CLOUDINARY_API_KEY:119948159122814}
-                secret: ${CLOUDINARY_API_SECRET:dVF_AkcNk985SqZQcDBYErDHDZI}
-                
 logging:
     level:
         org:
             springframework:
-                security: ${SPRING_SECURITY_LOG_LEVEL:ERROR}
+                security: ERROR
+
     pattern:
-        console: ${LOGPATTERN_CONSOLE:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}
+        console: "%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n"
