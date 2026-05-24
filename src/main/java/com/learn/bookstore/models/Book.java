@@ -24,7 +24,7 @@ public class Book {
     private Long id;
 
     @Schema(description = "Title of the book", example = "The Alchemist")
-    @NotBlank(message = "Title is required")
+   // @NotBlank(message = "Title is required")
     private String title;
 
     @Schema(description = "Publisher of the book", example = "HarperCollins")
