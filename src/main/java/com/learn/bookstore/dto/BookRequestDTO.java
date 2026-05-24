@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Builder
 public record BookRequestDTO(
 
-        @NotBlank(message = "Title is required")
+        //@NotBlank(message = "Title is required")
         @Size(max = 200, message = "Title must not exceed 200 characters")
         @Schema(description = "Title of the book", example = "Spring Boot in Action")
         String title,
@@ -19,7 +19,7 @@ public record BookRequestDTO(
         @Schema(description = "Publisher name", example = "Manning Publications")
         String publisher,
 
-        @NotNull(message = "Publication date is required")
+        //@NotNull(message = "Publication date is required")
         @PastOrPresent(message = "Publication date must be today or earlier")
         @Schema(description = "Date of publication", example = "2023-07-15")
         LocalDate publicationDate,
@@ -28,11 +28,11 @@ public record BookRequestDTO(
         @Schema(description = "Short description or summary of the book", example = "A comprehensive guide to Spring Boot for Java developers.")
         String description,
 
-        @NotNull(message = "Category ID is required")
+      //  @NotNull(message = "Category ID is required")
         @Schema(description = "ID of the book's category", example = "3")
         Long categoryId,
 
-        @NotNull(message = "Author ID is required")
+      //  @NotNull(message = "Author ID is required")
         @Schema(description = "ID of the author", example = "5")
         Long authorId
 
