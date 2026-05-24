@@ -14,7 +14,7 @@ public record BookRequestDTO(
         @Schema(description = "Title of the book", example = "Spring Boot in Action")
         String title,
 
-        @NotBlank(message = "Publisher is required")
+        //@NotBlank(message = "Publisher is required")
         @Size(max = 150, message = "Publisher name must not exceed 150 characters")
         @Schema(description = "Publisher name", example = "Manning Publications")
         String publisher,
