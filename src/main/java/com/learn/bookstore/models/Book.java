@@ -28,7 +28,7 @@ public class Book {
     private String title;
 
     @Schema(description = "Publisher of the book", example = "HarperCollins")
-    @NotBlank(message = "Publisher is required")
+   // @NotBlank(message = "Publisher is required")
     private String publisher;
 
     @Schema(description = "Publication date of the book", example = "2023-08-15")
@@ -37,7 +37,7 @@ public class Book {
 
     @Column(length = 1000)
     @Schema(description = "Brief description of the book", example = "A philosophical novel about following your dreams.")
-    @NotBlank(message = "Book description required")
+   // @NotBlank(message = "Book description required")
     @Size(max = 1000, message = "Book description must be under 1000 character")
     private String description;
 
