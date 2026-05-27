@@ -103,7 +103,7 @@ public class SecurityConfig {
                                 BookEndPointsConstants.GET_BOOK_BY_CATEGORY_ID,
                                 BookEndPointsConstants.GET_BOOK_BY_AUTHOR_ID
                         ).authenticated()
-                        .anyRequest().permitAll()
+                        .anyRequest().authenticated()
                 );
         http.formLogin(withDefaults());
         http.httpBasic(withDefaults());
