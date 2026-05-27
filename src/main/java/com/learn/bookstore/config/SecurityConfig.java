@@ -57,6 +57,12 @@ public class SecurityConfig {
                 .addFilterAfter(new JWTTokenGeneratorFilter(), BasicAuthenticationFilter.class)
                 //.requiresChannel(rcc -> rcc.anyRequest().requiresInsecure())
                 .authorizeHttpRequests((requests) -> requests
+                                       .requestMatchers(
+            "/",
+            "/error",
+            "/health",
+            "/actuator/health"
+    ).permitAll()
                         .requestMatchers(
                                 WelcomeEndPointsConstants.WELCOME,
                                 UserEndPointsConstants.LOGIN,
